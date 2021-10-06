@@ -3,6 +3,7 @@ package hello.hellospring.repository;
 import hello.hellospring.domain.Member;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -61,6 +62,7 @@ class MemoryMemberRepositoryTest {
         assertThat(result.size()).isEqualTo(2); //회원수
 
     }
+
     //class level에서 동시에 여러개의 메서드를 테스트 할 수 있음
     //테스트 주도개발 : 테스트 클래스를 먼저 작성하여 검증먼저 하는 개발법 (tdd)
 }
