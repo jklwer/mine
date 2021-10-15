@@ -6,7 +6,7 @@ public class Program {
 
 	public static void main(String[] args) {
 
-		ExamList list = new ExamList();	//객체가 만들어질떄 값 초기화 
+		ExamConsole list = new ExamConsole();	//객체가 만들어질떄 값 초기화 
 
 		//ExamList.init(list);
 		//list.init(); 생성자로 대체 
