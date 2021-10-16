@@ -6,7 +6,7 @@ public class Program {
 	//파일명 바꾸기 (java를 위한 압축파일 jar, 배포됨) -> Exam.jar
 	
 	public static void main(String[] args) {
-		NewlecExam exam = new NewlecExam();
+		NewlecExam exam = new NewlecExam(1,1,1,1);
 //		exam.setKor(10);
 //		exam.setEng(10);
 //		exam.setMath(10);

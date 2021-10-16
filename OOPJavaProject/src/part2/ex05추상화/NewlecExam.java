@@ -1,17 +1,19 @@
-import structure.part2.ex04UI코드분리.Exam;
+package part2.ex05추상화;
+
+import structure.part2.ex05추상화.Exam;
 
 public class NewlecExam extends Exam{
-	
-	private int com;
 
+	private int com;
+	
 	public NewlecExam() {
-		this(0, 0, 0, 0);
-	}
+		this(0,0,0,0);
+	}	
 	
 	public NewlecExam(int kor, int eng, int math, int com) {
 		super(kor, eng, math);
 		this.com = com;
-	}	
+	}
 	
 	public int getCom() {
 		return com;
@@ -20,15 +22,19 @@ public class NewlecExam extends Exam{
 	public void setCom(int com) {
 		this.com = com;
 	}
-	
+
 	@Override
 	public int total() {
-		return super.total() + com;
+		int total = onTotal() + com;
+		return total;
 	}
-	
+
 	@Override
 	public float avg() {
+		
 		return total()/4.0F;
 	}
+
+	
 	
 }
