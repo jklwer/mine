@@ -13,6 +13,6 @@ public class MemberService {
 	
 	public String selectPasswordById() {
 		//System.out.println(memberRepository);	(출력값 : org.apache.ibatis.binding.MapperProxy@67bd2b25) - 프록시객체 
-		return memberRepository.getPassword("dev");
+		return memberRepository.getPassword("dev"); 
 	}
 }
