@@ -14,7 +14,7 @@ public class MemberController {
 	
 	@GetMapping("search-pw")
 	public String searchPassword() {
-		System.out.println(memberService.selectPasswordById());
+		System.out.println("비밀번호 : " + memberService.selectPasswordById());
 		return "index";
 	}
 }

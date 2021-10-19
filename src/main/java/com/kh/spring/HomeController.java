@@ -34,10 +34,10 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "home";
+		return "home";	//view의 경로(jsp)
 	}
 	
-	@GetMapping("index")
+	@GetMapping("index")	//get으로 들어온 요청 매핑 	@RequestMapping(value = "/"index", method = RequestMethod.GET)의 축약 
 	public void index() {};
 	
 	
