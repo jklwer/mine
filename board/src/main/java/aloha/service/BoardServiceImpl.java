@@ -20,4 +20,27 @@ public class BoardServiceImpl implements BoardService{
 		return mapper.list();
 	}
 
+	@Override
+	public void insert(Board board) throws Exception {
+
+		mapper.insert(board);
+		
+	}
+
+	@Override
+	public Board read(Integer boardNo) throws Exception {
+		return mapper.read(boardNo);
+	}
+
+	@Override
+	public void update(Board board) throws Exception {
+
+		mapper.update(board);
+	}
+
+	@Override
+	public void delete(Integer boardNo) throws Exception {
+		mapper.delete(boardNo);
+	}
+
 }
