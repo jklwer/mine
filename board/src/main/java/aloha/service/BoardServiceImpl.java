@@ -43,4 +43,10 @@ public class BoardServiceImpl implements BoardService{
 		mapper.delete(boardNo);
 	}
 
+	@Override
+	public List<Board> list(String keyword) throws Exception {
+		keyword = keyword == null ? "" : keyword;
+		return mapper.search(keyword);
+	}
+
 }

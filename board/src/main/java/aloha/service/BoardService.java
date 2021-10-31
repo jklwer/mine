@@ -21,5 +21,8 @@ public interface BoardService {
 	//게시글 삭제
 	public void delete(Integer boardNo) throws Exception;
 
+	//게시글 검색
+	public List<Board> list(String keyword) throws Exception;
+
 	
 }

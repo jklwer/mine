@@ -43,6 +43,16 @@
 		delete from board where board_no = #{boardNo}
 	</delete>
 
-
+	<!-- 게시글 검색 -->
+	<select id="search" resultType="Board">
+		select * 
+		from board
+		where board_no > 0
+			and (
+				title like '%'|| #{keyword} ||'%'
+				or content like '%'|| #{keyword} ||'%'
+				or writer like '%'|| #{keyword} ||'%'
+			)
+	</select>
 
 </mapper>

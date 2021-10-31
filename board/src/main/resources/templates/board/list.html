@@ -6,7 +6,12 @@
 </head>
 <body>
 	<h1>게시판 목록</h1>
+	<form action="/board/list" method="get">
 	<a href="/board/insert">글쓰기</a>
+	<input type="text" name="keyword"  />
+	<input type="submit" value="검색"  />
+	</form>
+	
 	<table border="1">
 		<thead>
 			<tr>

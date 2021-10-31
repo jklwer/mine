@@ -27,10 +27,10 @@ public class BoardController {
 	
 	//게시글 목록(GET)
 	@GetMapping("/list")	//상위경로board
-	public String list(Model model) throws Exception {
+	public String list(Model model, String keyword) throws Exception {
 		
 		//게시글 목록 요청 
-		List<Board> list = service.list();
+		List<Board> list = service.list(keyword);
 		
 		model.addAttribute("list", list);
 		

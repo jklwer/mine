@@ -15,7 +15,10 @@ public interface BoardMapper {
 	public void insert(Board board) throws Exception;
 	//게시글 읽기
 	public Board read(Integer boardNo) throws Exception;
-	public void update(Board board);
-	public void delete(Integer boardNo);
+	public void update(Board board) throws Exception;
+	public void delete(Integer boardNo) throws Exception;
+	
+	//게시글 검색
+	public List<Board> search(String keyword) throws Exception;
 
 }
