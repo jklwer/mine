@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>게시판</title>
+	
+		<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	
+	<script>
+	
+		$(function() {
+			
+			var form = $("#board");
+			var boardNo = $("#boardNo").val();
+			
+			// 수정 버튼 클릭 이벤트
+			$("#btnUpdate").on("click", () => {
+				location.href = "/board/update?boardNo=" + boardNo;
+			});
+			
+			// 삭제 버튼 클릭 이벤트
+			$("#btnDelete").on("click", () => {
+				form.submit();
+			});
+			
+			// 목록 버튼 클릭 이벤트
+			$("#btnList").on("click", () => {
+				location.href = "/board/list";
+			});
+			
+		});
+	
+	</script>
+</head>
+<body>
+	<h2>글 읽기</h2>
+	<form id="board" th:action="@{delete}" method="post">
+		<input type="hidden" name="boardNo" th:value="${board.boardNo}" id="boardNo"/>
+		<table>
+			<tr>
+				<td>제목</td>
+				<td><input type="text" name="title" th:value="${board.title}" readonly /></td>
+			</tr>
+			<tr>
+				<td>작성자</td>
+				<td><input type="text" name="writer" th:value="${board.writer}" readonly /></td>
+			<tr>
+				<td>내용</td>
+				<td>
+					<textarea name="content" th:text="${board.content}" rows="20" cols="80" readonly></textarea>
+				</td>
+			</tr>
+			
+			<!-- 파일 목록 -->
+			<tr>
+				<td>파일</td>
+				<td>
+					<div th:each="file : ${fileList}">
+						<a href="|/file?fileNo=${file.fileNo}|" th:text="${file.fileName}"></a>
+					</div>
+					<div th:if="${#lists.isEmpty(fileList)}">
+						<a th:href="|/file/zip?boardNo=${board.boardNo}|">전체 다운로드</a>
+					</div>
+				</td>
+
+			</tr>
+		</table>
+	</form>
+
+	<div>
+		<button type="button" id="btnUpdate">수정</button>
+		<button type="button" id="btnDelete">삭제</button>
+		<button type="button" id="btnList">목록</button>
+	</div>
+
+</body>
+</html>
